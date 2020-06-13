@@ -63,6 +63,7 @@ class ScoreFragment : Fragment() {
         })
 
         binding.scoreViewModel = viewModel
+        binding.lifecycleOwner = this
 
         // Navigates back to title when button is pressed
         viewModel.eventPlayAgain.observe(viewLifecycleOwner, Observer { playAgain ->
@@ -75,7 +76,4 @@ class ScoreFragment : Fragment() {
         return binding.root
     }
 
-    private fun onPlayAgain() {
-        findNavController().navigate(ScoreFragmentDirections.actionRestart())
-    }
 }
