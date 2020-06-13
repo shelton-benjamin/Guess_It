@@ -62,7 +62,7 @@ class ScoreFragment : Fragment() {
             binding.scoreText.text = newScore.toString()
         })
 
-        binding.playAgainButton.setOnClickListener { viewModel.onPlayAgain() }
+        binding.scoreViewModel = viewModel
 
         // Navigates back to title when button is pressed
         viewModel.eventPlayAgain.observe(viewLifecycleOwner, Observer { playAgain ->
